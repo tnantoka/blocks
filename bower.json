@@ -1,0 +1,19 @@
+{
+  "name": "blocks",
+  "description": "The blocks of the Dead",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tnantoka/blocks",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-mocks": "~1.2.15",
+    "angular-animate": "~1.2.x",
+    "bootswatch": "~3.1.1",
+    "underscore": "~1.6.0",
+    "underscore.string": "~2.3.3",
+    "angular-ui-ace": "~0.1.1",
+    "angular-highlightjs": "~0.2.7"
+  }
+}

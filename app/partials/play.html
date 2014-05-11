@@ -1,0 +1,99 @@
+<h1 class="text-center">
+  <a href="#/home">The Blocks of the Dead</a>
+</h1>
+
+<div class="btn-group btn-group-justified">
+  <span ng-repeat="context in contexts" class="btn {{ context == question.context ? 'btn-primary highlighted' : 'btn-default' }}">
+    {{ context }}
+  </span>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="col-sm-4">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-success" type="button">returnType</span>
+        </span>
+        <input ng-model="question.returnType" type="text" class="form-control highlighted" disabled />
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-info" type="button">blockName</span>
+        </span>
+        <input ng-model="question.blockName" type="text" class="form-control highlighted" disabled />
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn btn-warning" type="button">typeName</span>
+        </span>
+        <input ng-model="question.typeName" type="text" class="form-control highlighted" disabled />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="col-sm-3">
+      <div class="btn-group btn-group-justified">
+        <span class="btn btn-danger">
+          parameters
+        </span>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="btn-group btn-group-justified">
+        <span ng-repeat="parameter in question.parameters" class="btn btn-default highlighted">
+         {{ parameter }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ui-ace="{ theme: 'xcode', mode: 'objectivec', onLoad: aceLoaded }" ng-model="question.input" ng-keyup="question.score()"></div>
+
+<div class="answer" ng-show="showAnswer">
+  <div hljs source="question.fullAnswer()">></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="col-sm-4">
+      <span class="btn btn-link">{{ time | elapsed }}</span>
+    </div>
+    <div class="col-sm-4">
+      <span class="btn btn-link">{{ question.count }}</span>
+    </div>
+    <div class="col-sm-4">
+      <div class="btn-group btn-group-justified">
+        <a class="btn btn-primary" ng-click="toggleAnswer()">Answer</a>
+        <a class="btn btn-default" ng-click="init()">Next</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="result">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Good job!</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{ time | elapsed }}</p>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-default" data-dismiss="modal">Close</a>
+        <a class="btn btn-primary" ng-click="init()">Next</a>
+      </div>
+    </div>
+  </div>
+</div>
+
