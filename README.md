@@ -10,6 +10,12 @@ $ cd blocks
 $ npm install
 ```
 
+## Run
+
+```
+$ npm start
+```
+
 ## Test
 
 ```
@@ -24,5 +30,9 @@ $ npm run protractor
 ## License 
 
 The MIT License
+
+## Acknowledgments
+
+(angular-seed)[https://github.com/angular/angular-seed]
 
 &copy; 2014 [tnantoka](https://twitter.com/tnantoka)
